@@ -1,0 +1,8 @@
+name: jboss-eap-jbds
+summary: Appliance with JBoss EAP started on boot
+packages:
+  includes: jboss-eap
+repos:
+  - name: "jboss-eap"
+    baseurl: "file://build/topdir/fedora/13/RPMS/noarch"
+    ephemereal: true
