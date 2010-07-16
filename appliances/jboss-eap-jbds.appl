@@ -1,8 +1,20 @@
 name: jboss-eap-jbds
-summary: Appliance with JBoss EAP started on boot
+summary: Appliance with JBoss EAP and PostgreSQL
+hardware:
+  memory: 512
+appliances:
+  - jeos-f13
 packages:
-  includes: jboss-eap
+  includes:
+    - jboss-eap
+    - postgresql-server
 repos:
   - name: "jboss-eap"
-    baseurl: "file://build/topdir/fedora/13/RPMS/noarch"
-    ephemereal: true
+    baseurl: "file:///mnt/jboss-eap-jbds/build/topdir/fedora/13/RPMS/noarch"
+    ephemeral: true
+post:
+  base:
+    - "/sbin/chkconfig postgresql on"
+    - "/sbin/service postgresql initdb"
+    - "/bin/sed -i s/'^host'/'# host'/g /var/lib/pgsql/data/pg_hba.conf"
+    - "/bin/echo 'host    rhq         rhq         127.0.0.1/32          md5' >> /var/lib/pgsql/data/pg_hba.conf"
