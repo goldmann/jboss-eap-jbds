@@ -1,21 +1,19 @@
 #!/bin/sh
 #
-# jboss-eap             Start up the JBoss Application Server
+# jboss-eap             JBoss Enterprise Application Platform
 #
 # chkconfig: 2345 84 15
-# description: JBoss Application Server
-# processname: jboss-as6
-# config: /etc/jboss-as.conf
-# pidfile: /var/run/jboss-as6.pid
+# description: JBoss Enterprise Application Platform
+# processname: jboss-eap
 
 ### BEGIN INIT INFO
-# Provides: jboss-as6
+# Provides: jboss-eap
 # Required-Start: $network $syslog
 # Required-Stop: $network
 # Default-Start:
 # Default-Stop:
-# Short-Description: Start up the JBoss Application Server
-# Description: JBoss Application Server
+# Short-Description: Start up the JBoss Enterprise Application Platform
+# Description: JBoss Enterprise Application Platform
 ### END INIT INFO
 
 # Source function library.
@@ -26,6 +24,8 @@
 
 # Check that networking is up.
 [ ${NETWORKING} = "no" ] && exit 0
+
+[ -f /usr/share/jboss-eap-postgresql/jboss-eap-postgresql-preconfigure.sh ] && /usr/share/jboss-eap-postgresql/jboss-eap-postgresql-preconfigure.sh
 
 NAME="jboss-eap"
 
@@ -58,7 +58,7 @@ JBOSSCP=${JBOSSCP:-"$JBOSS_HOME/bin/shutdown.jar:$JBOSS_HOME/client/jbossall-cli
 memory=`dmesg | grep ^Memory: | awk '{ print $2 }' | awk -F\/ '{ print $2 }' | sed 's/\k//g'`
 JAVA_OPTS="-Xms$(($memory / 1024 - $memory / 10240))M -Xmx$(($memory / 1024 - $memory / 10240))M -XX:PermSize=$(($memory / 1024 / 4))M -XX:MaxPermSize=$(($memory / 1024 / 4))M -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000"
 
-JBOSSCONF=${JBOSSCONF:-"default"}
+JBOSSCONF=${JBOSS_CONFIG:-"default"}
 
 IP_ADDRESS=`ip addr list eth0 | grep "inet " | cut -d' ' -f6 | cut -d/ -f1`
 
