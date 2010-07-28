@@ -66,10 +66,10 @@ IP_ADDRESS=`ip addr list eth0 | grep "inet " | cut -d' ' -f6 | cut -d/ -f1`
 JBOSSSH=${JBOSSSH:-"$JBOSS_HOME/bin/run.sh -c $JBOSSCONF"}
 
 #define the user under which jboss will run, or use RUNASIS to run as the current user
-JBOSSUS=${JBOSSUS:-"${NAME}"}
+JBOSSUS=${JBOSSUS:-"jboss"}
 
 #define the group under which jboss will run
-JBOSSGR=${JBOSSGR:-"${NAME}"}
+JBOSSGR=${JBOSSGR:-"jboss"}
 
 #define the lock file for this jboss instance
 JBOSSLOCK=/var/lock/subsys/$NAME-$JBOSSCONF

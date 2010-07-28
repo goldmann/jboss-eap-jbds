@@ -53,18 +53,19 @@ echo "JBOSS_HOME=/opt/%{name}-\$JBOSS_VERSION/jboss-as" >> $RPM_BUILD_ROOT/etc/s
 echo "JBOSS_CONFIG=%{eap_profile}"                      >> $RPM_BUILD_ROOT/etc/sysconfig/%{name}
 echo "JBOSS_TMP=\$JBOSS_HOME/tmp"                       >> $RPM_BUILD_ROOT/etc/sysconfig/%{name}
 
-chmod 600 $RPM_BUILD_ROOT/etc/sysconfig/%{name} 
+chmod 600 $RPM_BUILD_ROOT/etc/sysconfig/%{name}
 
 %clean
 rm -Rf $RPM_BUILD_ROOT
 
 %pre
 /usr/sbin/groupadd -r %{eap_user} 2>/dev/null || :
-/usr/sbin/useradd -c "JBoss" -r -s /bin/bash -d /opt/%{name}-%{version} -g %{eap_user} %{eap_user} 2>/dev/null || :
+/usr/sbin/useradd -c "JBoss" -r -s /bin/bash -m -g %{eap_user} %{eap_user} 2>/dev/null || :
 
 %post
 /sbin/chkconfig --add %{name}
 /sbin/chkconfig %{name} on
+ln -s /etc/sysconfig/%{name} /home/jboss/.jboss
 
 %files
 %defattr(-,%{eap_user},%{eap_user})
