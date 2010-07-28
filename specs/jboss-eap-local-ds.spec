@@ -33,6 +33,10 @@ install -m 744 %{SOURCE2} $RPM_BUILD_ROOT/usr/share/%{name}/
 install -m 644 %{SOURCE0} $RPM_BUILD_ROOT/opt/%{eap_name}-%{version}/jboss-as/server/%{eap_profile}/lib/
 install -m 644 %{SOURCE1} $RPM_BUILD_ROOT/opt/%{eap_name}-%{version}/jboss-as/server/%{eap_profile}/deploy/
 
+%post
+/bin/sed -i s/'^host'/'# host'/g /var/lib/pgsql/data/pg_hba.conf
+/bin/echo 'host    eap         eap         127.0.0.1/32          md5' >> /var/lib/pgsql/data/pg_hba.conf
+
 %clean
 rm -Rf $RPM_BUILD_ROOT
 
