@@ -43,6 +43,14 @@ fi
 
 export JAVA_HOME=${JAVA_HOME:-"/usr/lib/jvm/jre"}
 
+if [ `curl -o /dev/null -s -m 5 -w '%{http_code}' http://169.254.169.254/latest/meta-data/ami-id` -eq "200" ]; then
+    EC2_LOCATION=true
+
+    if [ `curl -o /dev/null -s -m 5 -w '%{http_code}' http://169.254.169.254/1.0/user-data` -eq "200" ]; then
+        eval "`curl -s http://169.254.169.254/1.0/user-data`"
+    fi
+fi
+
 # define where JBoss is - this is the directory containing directories log, bin, conf etc
 JBOSS_HOME=${JBOSS_HOME:-"/opt/jboss-as"}
 
