@@ -18,3 +18,4 @@ post:
   base:
     - "/sbin/chkconfig postgresql on"
     - "/sbin/service postgresql initdb"
+    - "/bin/sed -i s/'^host'/'# host'/g /var/lib/pgsql/data/pg_hba.conf"
