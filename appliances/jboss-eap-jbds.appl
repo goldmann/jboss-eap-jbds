@@ -7,6 +7,8 @@ appliances:
 packages:
   includes:
     - jboss-eap
+    - jboss-eap-local-ds
+    - jboss-eap-cloud-ds
     - postgresql-server
 repos:
   - name: "jboss-eap"

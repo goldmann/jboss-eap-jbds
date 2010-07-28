@@ -4,7 +4,7 @@
 %define mysql_connector_version 5.1.13
 
 Summary:            Amazon RDS support for JBoss EAP
-Name:               jboss-eap-rds
+Name:               jboss-eap-cloud-ds
 Version:            5.1.0.Beta
 Release:            20100727
 License:            LGPL

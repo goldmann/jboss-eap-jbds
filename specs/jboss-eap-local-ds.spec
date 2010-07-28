@@ -3,7 +3,7 @@
 %define postgresql_connector_version 8.4-701
 
 Summary:            PostgreSQL support for JBoss EAP
-Name:               jboss-eap-postgresql
+Name:               jboss-eap-local-ds
 Version:            5.1.0.Beta
 Release:            20100727
 License:            LGPL
