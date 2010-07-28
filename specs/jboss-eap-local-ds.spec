@@ -11,7 +11,7 @@ Group:              Applications/System
 BuildArch:          noarch
 Source0:            http://jdbc.postgresql.org/download/postgresql-%{postgresql_connector_version}.jdbc4.jar
 Source1:            local-ds.xml
-Source2:            jboss-eap-postgresql-preconfigure.sh
+Source2:            %{name}-preconfigure.sh
 
 Requires:           jboss-eap
 

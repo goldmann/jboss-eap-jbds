@@ -25,7 +25,7 @@
 # Check that networking is up.
 [ ${NETWORKING} = "no" ] && exit 0
 
-[ -f /usr/share/jboss-eap-postgresql/jboss-eap-postgresql-preconfigure.sh ] && /usr/share/jboss-eap-postgresql/jboss-eap-postgresql-preconfigure.sh
+[ -f /usr/share/jboss-eap-local-ds/jboss-eap-local-ds-preconfigure.sh ] && /usr/share/jboss-eap-local-ds/jboss-eap-local-ds-preconfigure.sh
 
 NAME="jboss-eap"
 
