@@ -25,7 +25,9 @@
 # Check that networking is up.
 [ ${NETWORKING} = "no" ] && exit 0
 
-[ -f /usr/share/jboss-eap-local-ds/jboss-eap-local-ds-preconfigure.sh ] && /usr/share/jboss-eap-local-ds/jboss-eap-local-ds-preconfigure.sh
+if [ -f /usr/share/jboss-eap-local-ds/jboss-eap-local-ds-preconfigure.sh ]; then
+    /usr/share/jboss-eap-local-ds/jboss-eap-local-ds-preconfigure.sh
+fi
 
 NAME="jboss-eap"
 

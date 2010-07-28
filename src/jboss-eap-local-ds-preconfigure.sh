@@ -1,3 +1,5 @@
+#!/bin/sh
+
 DATABASE_NAME=eap
 DATABASE_USER=eap
 DATABASE_PASSWORD=eap
