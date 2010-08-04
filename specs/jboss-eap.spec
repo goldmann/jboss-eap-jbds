@@ -1,8 +1,6 @@
 %define eap_major_version 5.1
 %define eap_profile default
 %define eap_user jboss
-%define mysql_connector_version 5.1.13
-%define postgresql_connector_version 8.4-701
 
 Summary:            JBoss Enterprise Application Platform
 Name:               jboss-eap
@@ -73,7 +71,7 @@ ln -s /etc/sysconfig/%{name} /home/jboss/.jboss
 
 %changelog
 * Tue Jul 27 2010 Marek Goldmann 5.1.0.Beta-20100727
-- Upgrade to JBoss EAP 5.1.0.Beta, added two new datasources
+- Upgrade to JBoss EAP 5.1.0.Beta
 
 * Tue Jul 15 2010 Marek Goldmann 5.0.1-20100715
 - Initial release

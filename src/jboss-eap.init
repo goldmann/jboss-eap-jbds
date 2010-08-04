@@ -66,6 +66,8 @@ JAVAPTH=${JAVAPTH:-"$JAVA_HOME/bin"}
 JBOSSCP=${JBOSSCP:-"$JBOSS_HOME/bin/shutdown.jar:$JBOSS_HOME/client/jbossall-client.jar"}
 
 memory=`dmesg | grep ^Memory: | awk '{ print $2 }' | awk -F\/ '{ print $2 }' | sed 's/\k//g'`
+memory=$((memory/3*2))
+
 JAVA_OPTS="-Xms$(($memory / 1024 - $memory / 10240))M -Xmx$(($memory / 1024 - $memory / 10240))M -XX:PermSize=$(($memory / 1024 / 4))M -XX:MaxPermSize=$(($memory / 1024 / 4))M -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000"
 
 JBOSSCONF=${JBOSS_CONFIG:-"default"}

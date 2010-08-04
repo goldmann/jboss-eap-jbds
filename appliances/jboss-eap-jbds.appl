@@ -10,6 +10,7 @@ packages:
     - jboss-eap-local-ds
     - jboss-eap-cloud-ds
     - postgresql-server
+    - jon
 repos:
   - name: "jboss-eap"
     baseurl: "file:///mnt/jboss-eap-jbds/build/topdir/fedora/13/RPMS/noarch"
@@ -20,3 +21,4 @@ post:
     - "/sbin/service postgresql initdb"
     - "/bin/sed -i s/'^host'/'# host'/g /var/lib/pgsql/data/pg_hba.conf"
     - "/bin/echo 'host    eap         eap         127.0.0.1/32          md5' >> /var/lib/pgsql/data/pg_hba.conf"
+    - "/bin/echo 'host    rhq         rhq         127.0.0.1/32          md5' >> /var/lib/pgsql/data/pg_hba.conf"

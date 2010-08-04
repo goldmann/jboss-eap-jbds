@@ -41,5 +41,5 @@ rm -Rf $RPM_BUILD_ROOT
 /
 
 %changelog
-* Wed Jul 28 2010 Marek Goldmann 5.0.1-20100727
+* Wed Jul 28 2010 Marek Goldmann 5.1.0.Beta-20100727
 - Initial release
