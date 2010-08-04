@@ -14,6 +14,7 @@ packages:
     - postgresql-server
     - jon
     - jon-agent
+    - jboss-eap-jon
 repos:
   - name: "jboss-eap"
     baseurl: "file:///mnt/jboss-eap-jbds/build/topdir/fedora/13/RPMS/noarch"
