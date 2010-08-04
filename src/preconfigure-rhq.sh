@@ -5,7 +5,7 @@ echo "Preconfiguring RHQ server..."
 [ -f /etc/sysconfig/boxgrinder ]   && . /etc/sysconfig/boxgrinder
 [ -f /etc/sysconfig/jon ]          && . /etc/sysconfig/jon
 
-export RHQ_SERVER_JAVA_HOME=/usr/lib/jvm/java-1.6.0/
+export RHQ_SERVER_JAVA_HOME=/usr/lib/jvm/jre-1.6.0/
 DATABASE_NAME=rhq
 DATABASE_USER=rhq
 DATABASE_PASSWORD=`head -c10 /dev/urandom | md5sum | head -c30`
