@@ -13,6 +13,7 @@ packages:
     - jboss-eap-cloud-ds
     - postgresql-server
     - jon
+    - jon-agent
 repos:
   - name: "jboss-eap"
     baseurl: "file:///mnt/jboss-eap-jbds/build/topdir/fedora/13/RPMS/noarch"
