@@ -1,4 +1,6 @@
 name: jboss-eap-jbds
+version: 1
+release: 1
 summary: Appliance with JBoss EAP and PostgreSQL
 hardware:
   memory: 512
