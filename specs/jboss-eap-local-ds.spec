@@ -4,8 +4,8 @@
 
 Summary:            PostgreSQL support for JBoss EAP
 Name:               jboss-eap-local-ds
-Version:            5.1.0.Beta
-Release:            20100727
+Version:            5.1.0.CR3
+Release:            20100831
 License:            LGPL
 Group:              Applications/System
 BuildArch:          noarch
@@ -41,5 +41,8 @@ rm -Rf $RPM_BUILD_ROOT
 /
 
 %changelog
+* Fri Sep 03 2010 Marek Goldmann 5.1.0.CR3-20100831
+- Upgrade to JBoss EAP 5.1.0.CR3
+
 * Wed Jul 28 2010 Marek Goldmann 5.1.0.Beta-20100727
 - Initial release

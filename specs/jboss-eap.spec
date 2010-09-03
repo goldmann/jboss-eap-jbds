@@ -6,8 +6,8 @@
 
 Summary:            JBoss Enterprise Application Platform
 Name:               jboss-eap
-Version:            5.1.0.Beta
-Release:            20100727
+Version:            5.1.0.CR3
+Release:            20100831
 License:            LGPL
 Group:              Applications/System
 BuildArch:          noarch
@@ -69,6 +69,9 @@ ln -s /etc/sysconfig/%{name} /home/jboss/.jboss
 /
 
 %changelog
+* Fri Sep 03 2010 Marek Goldmann 5.1.0.CR3-20100831
+- Upgrade to JBoss EAP 5.1.0.CR3
+
 * Tue Jul 27 2010 Marek Goldmann 5.1.0.Beta-20100727
 - Upgrade to JBoss EAP 5.1.0.Beta
 
