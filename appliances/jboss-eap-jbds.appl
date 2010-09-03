@@ -1,6 +1,6 @@
 name: jboss-eap-jbds
 version: 1
-release: 2
+release: 3
 summary: Appliance with JBoss EAP and PostgreSQL
 hardware:
   memory: 512
@@ -14,7 +14,7 @@ packages:
     - postgresql-server
     - jon
     - jon-agent
-    - jboss-eap-jon
+    - jon-helper
 repos:
   - name: "jboss-eap"
     baseurl: "file:///mnt/jboss-eap-jbds/build/topdir/fedora/13/RPMS/noarch"

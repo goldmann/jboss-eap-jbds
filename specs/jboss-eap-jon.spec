@@ -1,8 +1,8 @@
 %define rhq_name jon-cli
 %define cli_version 3.0.0.GA
 
-Summary:        JON Helper for JBoss EAP
-Name:           jboss-eap-jon
+Summary:        JON Helper
+Name:           jon-helper
 Version:        2.4.0.GA
 Release:        1
 License:        LGPL
