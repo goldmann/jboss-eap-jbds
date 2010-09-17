@@ -15,6 +15,7 @@ packages:
     - jon
     - jon-agent
     - jon-helper
+    - rsync
 repos:
   - name: "jboss-eap"
     baseurl: "file:///mnt/jboss-eap-jbds/build/topdir/fedora/13/RPMS/noarch"

@@ -1,4 +1,5 @@
 %define eap_major_version 5.1
+%define eap_version 5.1.0-CR3.5
 %define eap_profile default
 %define eap_user jboss
 %define runuser %{name}
@@ -6,12 +7,12 @@
 
 Summary:            JBoss Enterprise Application Platform
 Name:               jboss-eap
-Version:            5.1.0.CR3
-Release:            20100831
+Version:            5.1.0.CR3.5
+Release:            20100917
 License:            LGPL
 Group:              Applications/System
 BuildArch:          noarch
-Source0:            %{name}-%{version}.zip
+Source0:            %{name}-%{eap_version}.zip
 Source1:            %{name}.init
 Requires(build):    unzip
 Requires:           shadow-utils
