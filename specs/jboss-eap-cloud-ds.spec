@@ -4,8 +4,8 @@
 
 Summary:            Amazon RDS support for JBoss EAP
 Name:               jboss-eap-cloud-ds
-Version:            5.1.0.Beta
-Release:            20100727
+Version:            5.1.0.CR3.5
+Release:            20100917
 License:            LGPL
 Group:              Applications/System
 BuildArch:          noarch
